@@ -59,15 +59,32 @@ class RegisterViewModel @Inject constructor(
         viewModelScope.launch {
             userRepository.register(email, password).collect { result ->
                 result.onSuccess {
-                    val userId = userRepository.getUserId()
-                    print(userId)
+                    userRepository.getUserId().collect { userIdResult ->
+                        userIdResult.onSuccess { userId ->
+                            val user = User(
+                                userId,
+                                uiState.value.name,
+                                uiState.value.email,
+                                uiState.value.contact
+                            )
+                            userRepository.createUser(user).collect { result ->
+                                result.onSuccess {
+                                    uiState.value = uiState.value.copy(loading = false)
+                                }.onFailure { e ->
+                                    uiState.value =
+                                        uiState.value.copy(error = e.message, loading = false)
+                                }
+
+                            }
+                        }.onFailure { e ->
+                            uiState.value = uiState.value.copy(error = e.message, loading = false)
+                        }
+                    }
                     uiState.value = uiState.value.copy(loading = false)
                     onRegisterSuccess()
                 }.onFailure { e ->
                     uiState.value = uiState.value.copy(error = e.message, loading = false)
-
                 }
-
             }
         }
     }
