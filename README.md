@@ -1,6 +1,6 @@
-# 📱 PDM – Portfolio de Projetos
+# PDM – Portfolio de Projetos
 
-Este repositório reúne várias aplicações desenvolvidas no âmbito da unidade curricular **Programação de Dispositivos Móveis (PDM)**.  
+Este repositório reúne várias projetos desenvolvidas no âmbito da unidade curricular **Programação de Dispositivos Móveis (PDM)**.  
 Cada projeto foca num conjunto diferente de conceitos, abordando desde UI declarativa até Clean Architecture.
 
 ---
@@ -20,11 +20,12 @@ Demonstração dos princípios básicos de **Jetpack Compose**, focando:
 Aplicação de calculadora construída com enfoque em:
 
 - Paradigma **funcional**
-- Funções puras
 
 ---
 
 ### **3. Converter – Functional Programming**
+
+- Paradigma **funcional**
 
 ---
 
@@ -38,13 +39,13 @@ Aplicação que consome uma API externa, abordando:
 
 ---
 
-### **5. LoginApp – Clean Architecture (Firebase / Room)**
+### **5. LoginApp – Clean Architecture (Firebase /Android Room)**
 
 Aplicação mais completa, estruturada com **Clean Architecture**, incluindo:
 
 - **Firebase Authentication** para login e registo.
 - **FireStorage** para guardar os produtos.
-- **Android Room** para armazenamento local
+- **Android Room** para armazenamento local (ui.auth)
 
 ---
 
@@ -53,15 +54,10 @@ Aplicação mais completa, estruturada com **Clean Architecture**, incluindo:
 - **Kotlin**
 - **Jetpack Compose**
 - **Firebase Authentication**
+- **FireStorage**
 - **Android Room**
 - **Clean Architecture**
 - **REST APIs**
-
----
-
-## Estrutura do Repositório
-
-Cada projeto encontra-se em pastas separadas com o seu código e documentação interna.
 
 ---
 
